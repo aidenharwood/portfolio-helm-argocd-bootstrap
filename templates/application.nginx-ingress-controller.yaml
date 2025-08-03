@@ -14,7 +14,7 @@ spec:
         controller:
           replicaCount: 2
   destination:
-    server: in-cluster
+    name: in-cluster
     namespace: ingress-nginx
   syncPolicy:
     automated:
