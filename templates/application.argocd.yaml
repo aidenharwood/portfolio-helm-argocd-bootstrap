@@ -11,13 +11,13 @@ spec:
           cm:
             accounts.guest: login
             url: https://argocd.aidenharwood.uk
-            
+
             policy.default: role:readonly
             policy.overlay.csv: |
               g, my-org:team-qa, role:tester
           secret:
             extra:
-              accounts.guest.password: {{ (htpasswd "guest" "guest" | splitList ":" | index 1) | trim }}
+              # accounts.guest.password: {{ (htpasswd "guest" "guest" | splitList ":" | index 1) | trim }}
           params:
             server.insecure: true
     repoURL: https://argoproj.github.io/argo-helm
