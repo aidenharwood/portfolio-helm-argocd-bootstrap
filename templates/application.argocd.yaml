@@ -12,7 +12,7 @@ spec:
             accounts.guest: login
           secret:
             extra:
-              accounts.guest.password: guest
+              accounts.guest.password: { htpasswd "guest" "guest"}
           params:
             server.insecure: true
     repoURL: https://argoproj.github.io/argo-helm
