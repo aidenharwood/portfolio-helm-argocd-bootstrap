@@ -7,9 +7,9 @@ spec:
   source:
     helm:
       values: |
-        cm: |
-          accounts.guest: login
         configs:
+          cm:
+            accounts.guest: login
           params:
             server.insecure: true
     repoURL: https://argoproj.github.io/argo-helm
