@@ -4,7 +4,7 @@ metadata:
   name: website
 spec:
   type: ExternalName
-  externalName: hello-world.website.svc.cluster.local
+  externalName: portfolio-frontend.website.svc.cluster.local
   ports:
   - port: 80
     targetPort: 80
