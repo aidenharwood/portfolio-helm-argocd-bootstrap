@@ -12,7 +12,9 @@ spec:
     helm:
       values: |
         controller:
-          replicaCount: 2
+          service:
+            type: NodePort
+            externalTrafficPolicy: Local
   destination:
     name: in-cluster
     namespace: ingress-nginx
