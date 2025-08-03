@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+spec:
+  project: default
+  source:
+    helm:
+      values: |
+        cm:
+          accounts.guest: login
+        configs:
+          params:
+            server.insecure: true
+    repoURL: https://argoproj.github.io/argo-helm
+    targetRevision: 8.2.5
+    chart: argo-cd
+  destination:
+    name: in-cluster
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
