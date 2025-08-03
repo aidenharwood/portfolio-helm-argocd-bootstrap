@@ -13,7 +13,7 @@ spec:
             url: https://argocd.aidenharwood.uk
           secret:
             extra:
-              accounts.guest.password: {{ htpasswd "guest" "guest" }}
+              accounts.guest.password: {{ (htpasswd "guest" "guest" | splitList ":" | index 1) | trim }}
           params:
             server.insecure: true
     repoURL: https://argoproj.github.io/argo-helm
