@@ -14,7 +14,7 @@ spec:
 
             policy.default: role:readonly
             policy.overlay.csv: |
-              g, my-org:team-qa, role:tester
+              g, guest, role:readonly
           secret:
             extra:
               # accounts.guest.password: {{ (htpasswd "guest" "guest" | splitList ":" | index 1) | trim }}
