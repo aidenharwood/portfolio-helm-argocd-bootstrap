@@ -10,6 +10,9 @@ spec:
         configs:
           cm:
             accounts.guest: login
+          secret:
+            extra:
+              accounts.guest.password: guest
           params:
             server.insecure: true
     repoURL: https://argoproj.github.io/argo-helm
