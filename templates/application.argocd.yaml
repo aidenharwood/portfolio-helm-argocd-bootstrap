@@ -17,7 +17,7 @@ spec:
               g, guest, role:readonly
           secret:
             extra:
-              # accounts.guest.password: {{ (htpasswd "guest" "guest" | splitList ":" | index 1) | trim }}
+              # accounts.guest.password: {{ with (second (htpasswd "guest" "guest" | splitList ":")) | trim }}
           params:
             server.insecure: true
     repoURL: https://argoproj.github.io/argo-helm
