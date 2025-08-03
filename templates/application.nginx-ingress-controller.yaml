@@ -12,7 +12,7 @@ spec:
       values: |
         controller:
           service:
-            type: NodePort
+            type: LoadBalancer
             externalTrafficPolicy: Local
   destination:
     name: in-cluster

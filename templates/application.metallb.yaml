@@ -1,19 +1,19 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: metallb
-# spec:
-#   project: default
-#   source:
-#     repoURL: https://metallb.github.io/metallb
-#     targetRevision: "0.15.2"
-#     chart: metallb
-#   destination:
-#     name: in-cluster
-#     namespace: metallb-system
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     syncOptions:
-#       - CreateNamespace=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metallb
+spec:
+  project: default
+  source:
+    repoURL: https://metallb.github.io/metallb
+    targetRevision: "0.15.2"
+    chart: metallb
+  destination:
+    name: in-cluster
+    namespace: metallb-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
