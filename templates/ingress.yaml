@@ -8,12 +8,23 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: aidenharwood.uk
+    http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
             name: argocd-server
+            port:
+              name: https
+  - host: aidenharwood.uk
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hello-world.website.svc.cluster.local
             port:
               name: https
