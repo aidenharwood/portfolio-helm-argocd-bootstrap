@@ -8,6 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: nginx
+  type: NodePort
   rules:
   - host: argocd.aidenharwood.uk
     http:
