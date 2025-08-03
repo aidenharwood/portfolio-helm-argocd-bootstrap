@@ -7,7 +7,7 @@ spec:
   source:
     helm:
       values: |
-        cm:
+        cm: |
           accounts.guest: login
         configs:
           params:
