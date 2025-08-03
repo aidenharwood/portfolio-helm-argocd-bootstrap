@@ -10,6 +10,7 @@ spec:
         configs:
           cm:
             accounts.guest: login
+            url: https://argocd.aidenharwood.uk
           secret:
             extra:
               accounts.guest.password: { htpasswd "guest" "guest"}
