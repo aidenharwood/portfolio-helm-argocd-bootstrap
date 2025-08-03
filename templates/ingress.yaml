@@ -4,11 +4,12 @@ metadata:
   name: argocd-server-ingress
   namespace: argocd
   annotations:
+    kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: nginx
   rules:
-  - host: aidenharwood.uk
+  - host: argocd.aidenharwood.uk
     http:
       paths:
       - path: /
@@ -25,6 +26,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: hello-world.website.svc.cluster.local
+            name: website
             port:
-              name: https
+              name: 80
