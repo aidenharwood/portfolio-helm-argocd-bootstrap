@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     helm:
-      values:
+      values: |
         repo: "{{ .Values.repo }}"
     repoURL: "{{ .Values.repo }}"
     targetRevision: HEAD
