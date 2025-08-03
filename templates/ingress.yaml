@@ -7,7 +7,7 @@ metadata:
     # kubernetes.io/ingress.class: "nginx"
     # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
-  type: NodePort
+  ingressClassName: nginx
   rules:
   - host: argocd.aidenharwood.uk
     http:
