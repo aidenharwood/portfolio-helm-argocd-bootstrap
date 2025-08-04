@@ -9,6 +9,7 @@ spec:
       values: |
         configs:
           cm:
+            statusbadge.enabled: true
             accounts.guest: login
             url: https://argocd.aidenharwood.uk
 
