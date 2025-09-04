@@ -8,7 +8,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-    repoURL: "{{ .Values.repo }}"
+    repoURL: https://github.com/aidenharwood/portfolio-helm-metallb
     targetRevision: HEAD
     path: .
   destination:
