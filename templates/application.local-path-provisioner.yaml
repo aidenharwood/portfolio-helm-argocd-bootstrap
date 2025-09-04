@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: local-path-provisioner
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rancher/local-path-provisioner
+    targetRevision: v0.0.32
+    path: deploy
+    kustomize: {}
+  destination:
+    name: in-cluster
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
