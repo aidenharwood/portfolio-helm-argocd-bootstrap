@@ -8,10 +8,18 @@ spec:
     repoURL: https://github.com/rancher/local-path-provisioner
     targetRevision: v0.0.32
     path: deploy
-    kustomize: {}
+    kustomize:
+      patches:
+        - target:
+            kind: StorageClass
+            name: local-path
+          patch: |-
+            - op: add
+              path: /metadata/annotations/storageclass.kubernetes.io~1is-default-class
+              value: "true"
   destination:
     name: in-cluster
-    namespace: argocd
+    namespace: kube-system
   syncPolicy:
     automated:
       prune: true
