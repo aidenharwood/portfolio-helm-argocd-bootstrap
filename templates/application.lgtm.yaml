@@ -8,9 +8,8 @@ spec:
     helm:
       # values: |
         
-    repoURL: https://grafana.github.io/helm-charts
-    targetRevision: 2.1.0
-    chart: lgtm-distributed
+    repoURL: https://github.com/aidenharwood/portfolio-helm-argocd-bootstrap
+    path: .
   destination:
     name: in-cluster
     namespace: lgtm
