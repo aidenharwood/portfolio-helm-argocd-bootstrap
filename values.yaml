@@ -10,6 +10,6 @@ argocd:
         g, guest, role:readonly
     secret:
       extra:
-        accounts.guest.password: {{ (split ":" (htpasswd "guest" "guest"))._1 }}
+        accounts.guest.password: $apr1$y5jVhB/4$bVKzz2kFLsFt1vQZya5vT0
     params:
       server.insecure: true
