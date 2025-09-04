@@ -8,7 +8,7 @@ spec:
     helm:
       # values: |
         
-    repoURL: https://github.com/aidenharwood/portfolio-helm-argocd-bootstrap
+    repoURL: https://github.com/aidenharwood/portfolio-helm-lgtm
     targetRevision: HEAD
     path: .
   destination:
