@@ -4,7 +4,7 @@ metadata:
   name: grafana
 spec:
   type: ExternalName
-  externalName: lgtm-lgtm-grafana.lgtm.svc.cluster.local
+  externalName: lgtm-grafana.lgtm.svc.cluster.local
   ports:
   - port: 80
     targetPort: 80
