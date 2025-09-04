@@ -9,6 +9,7 @@ spec:
       # values: |
         
     repoURL: https://github.com/aidenharwood/portfolio-helm-argocd-bootstrap
+    targetRevision: HEAD
     path: .
   destination:
     name: in-cluster
