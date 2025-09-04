@@ -34,7 +34,7 @@ spec:
             purge: false
   destination:
     name: in-cluster
-    namespace: ingress-nginx
+    namespace: minio
   syncPolicy:
     automated:
       prune: true
