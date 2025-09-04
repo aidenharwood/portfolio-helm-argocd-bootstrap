@@ -1,0 +1,44 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minio
+spec:
+  project: default
+  source:
+    repoURL: https://charts.min.io/
+    targetRevision: 5.4.0
+    chart: minio
+    helm:
+      values: |
+        minio:
+          replicas: 2
+          rootUser: lgtm
+          rootPassword: minio123
+          persistence:
+            size: 5Gi
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          buckets:
+            - name: tempo-traces
+              policy: none
+              purge: false
+            - name: mimir-ruler
+              policy: none
+              purge: false
+            - name: mimir-tsdb
+              policy: none
+              purge: false
+            - name: mimir-alertmanager
+              policy: none
+              purge: false
+  destination:
+    name: in-cluster
+    namespace: ingress-nginx
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
