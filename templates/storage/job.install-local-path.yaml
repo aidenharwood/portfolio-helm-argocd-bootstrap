@@ -13,7 +13,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: install-local-path
-          image: bitnami/kubectl:1.27.4
+          image: bitnami/kubectl:1.33.4-debian
           imagePullPolicy: IfNotPresent
           command: [ "sh", "-c" ]
           args:
