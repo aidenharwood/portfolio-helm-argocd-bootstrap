@@ -16,7 +16,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: argocd-server
+            name: bootstrap-argocd-server
             port:
               name: http
   - host: aidenharwood.uk
