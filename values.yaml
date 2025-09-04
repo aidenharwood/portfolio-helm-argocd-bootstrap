@@ -1,0 +1,15 @@
+argocd:
+  configs:
+    cm:
+      statusbadge.enabled: true
+      accounts.guest: login
+      url: https://argocd.aidenharwood.uk
+
+      policy.default: role:readonly
+      policy.overlay.csv: |
+        g, guest, role:readonly
+    secret:
+      extra:
+        accounts.guest.password: {{ (split ":" (htpasswd "guest" "guest"))._1 }}
+    params:
+      server.insecure: true

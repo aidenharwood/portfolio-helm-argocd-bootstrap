@@ -5,9 +5,10 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://metallb.github.io/metallb
-    targetRevision: 0.15.2
-    chart: metallb
+    helm:
+    repoURL: https://github.com/aidenharwood/portfolio-helm-metallb
+    targetRevision: HEAD
+    path: .
   destination:
     name: in-cluster
     namespace: metallb-system

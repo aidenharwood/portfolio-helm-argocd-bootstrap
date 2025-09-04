@@ -6,8 +6,8 @@ spec:
   project: default
   source:
     helm:
-      values: |
-        repo: "{{ .Values.repo }}"
+      valueFiles:
+        - values.yaml
     repoURL: "{{ .Values.repo }}"
     targetRevision: HEAD
     path: .
