@@ -18,8 +18,8 @@ spec:
           metrics:
             enableOpenMetrics: true
             enabled:
-              - dns
-              - drop
+              - dns:query;ignoreAAAA
+              - drop:sourceContext=identity;destinationContext=identity
               - tcp
               - flow
               - port-distribution
