@@ -1,7 +1,9 @@
 argo-cd:
   configs:
     cm:
-      users.anonymous.enabled: "true"
+      users.anonymous.enabled: true
+      users:
+        anonymous.enabled: true
       statusbadge.enabled: true
       url: https://argocd.aidenharwood.uk
 
