@@ -5,9 +5,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://kubernetes.github.io/ingress-nginx
+    repoURL: https://helm.cilium.io/
     targetRevision: 4.10.1
-    chart: ingress-nginx
+    chart: cilium
     helm:
       values: |
         hubble:
@@ -19,7 +19,7 @@ spec:
           - --bpf-filter-priority=2
   destination:
     name: in-cluster
-    namespace: ingress-nginx
+    namespace: cilium
   syncPolicy:
     automated:
       prune: true
