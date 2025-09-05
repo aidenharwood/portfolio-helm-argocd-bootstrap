@@ -1,15 +1,14 @@
 argo-cd:
   configs:
     cm:
+      users:
+        anonymous.enabled: "true"
       statusbadge.enabled: true
-      accounts.guest: login
       url: https://argocd.aidenharwood.uk
 
       policy.default: role:readonly
-      policy.overlay.csv: |
-        g, guest, role:readonly
-    secret:
-      extra:
-        accounts.guest.password: $apr1$y5jVhB/4$bVKzz2kFLsFt1vQZya5vT0
+      configs:
+        rbac:
+          policy.default: role:readonly
     params:
       server.insecure: true
