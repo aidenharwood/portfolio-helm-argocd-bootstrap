@@ -1,7 +1,6 @@
 argo-cd:
   configs:
     cm:
-      users.anonymous.enabled: true
       users:
         anonymous.enabled: true
       statusbadge.enabled: true
