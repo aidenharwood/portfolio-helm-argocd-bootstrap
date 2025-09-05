@@ -17,8 +17,8 @@ spec:
             enabled: true
         operator:
           replicas: 1
-        extraArgs:
-          - --bpf-filter-priority=2
+        extraConfig:
+          bpf-filter-priority: 2
   destination:
     name: in-cluster
     namespace: kube-system
