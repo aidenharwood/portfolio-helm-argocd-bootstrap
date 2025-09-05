@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cilium
+spec:
+  project: default
+  source:
+    repoURL: https://helm.cilium.io/
+    targetRevision: 1.5.0
+    chart: tetragon
+    # helm:
+    #   values: |
+  destination:
+    name: in-cluster
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
