@@ -6,6 +6,10 @@ spec:
   project: default
   source:
     helm:
+      valueFiles:
+        - values.lgtm.yaml
+        - values.alloy.yaml
+        - values.beyla.yaml
       # values: |
         
     repoURL: https://github.com/aidenharwood/portfolio-helm-lgtm
