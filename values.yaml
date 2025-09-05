@@ -12,3 +12,6 @@ argo-cd:
           policy.default: role:readonly
     params:
       server.insecure: true
+  controller:
+    metrics:
+      enabled: true
