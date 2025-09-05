@@ -16,6 +16,7 @@ spec:
           ui:
             enabled: true
           metrics:
+            enableOpenMetrics: true
             enabled:
               - dns
               - drop
@@ -23,10 +24,7 @@ spec:
               - flow
               - port-distribution
               - icmp
-              - source_namespace
-              - destination_namespace
-              - destination_workload
-              - traffic_direction
+              - 'httpV2:exemplars=true;labelsContext=source_ip,source_namespace,source_workload,destination_ip,destination_namespace,destination_workload,traffic_direction;sourceContext=workload-name|reserved-identity;destinationContext=workload-name|reserved-identity'
 
         operator:
           replicas: 1
