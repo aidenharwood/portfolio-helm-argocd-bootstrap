@@ -21,7 +21,7 @@ spec:
           - --bpf-filter-priority=2
   destination:
     name: in-cluster
-    namespace: cilium
+    namespace: kube-system
   syncPolicy:
     automated:
       prune: true
