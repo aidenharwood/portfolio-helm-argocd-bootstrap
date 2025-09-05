@@ -4,7 +4,7 @@ metadata:
   name: hubble-ui
 spec:
   type: ExternalName
-  externalName: hubble-ui.cilium.svc.cluster.local
+  externalName: hubble-ui.kube-system.svc.cluster.local
   ports:
   - port: 80
     targetPort: 80
