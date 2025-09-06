@@ -8,8 +8,10 @@ spec:
     repoURL: https://helm.cilium.io/
     targetRevision: 1.5.0
     chart: tetragon
-    # helm:
-    #   values: |
+    helm:
+      values: |
+        processAncestors:
+          enabled: true
   destination:
     name: in-cluster
     namespace: kube-system
