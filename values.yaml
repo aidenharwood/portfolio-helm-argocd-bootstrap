@@ -3,7 +3,15 @@ argo-cd:
     cm:
       users.anonymous.enabled: true
       statusbadge.enabled: true
+      statusbadge.url: https://argocd.aidenharwood.uk/
       url: https://argocd.aidenharwood.uk
+      project.links: |
+        - url: https://aidenharwood.uk
+          name: Portfolio
+        - url: https://hubble.aidenharwood.uk
+          name: Hubble
+        - url: https://grafana.aidenharwood.uk
+          name: Grafana
     rbac:
       policy.default: role:readonly
     params:
