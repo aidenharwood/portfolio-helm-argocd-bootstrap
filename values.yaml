@@ -4,9 +4,8 @@ argo-cd:
       users.anonymous.enabled: true
       statusbadge.enabled: true
       url: https://argocd.aidenharwood.uk
-      configs:
-        rbac:
-          policy.default: role:readonly
+      rbac:
+        policy.default: role:readonly
     params:
       server.insecure: true
   controller:
