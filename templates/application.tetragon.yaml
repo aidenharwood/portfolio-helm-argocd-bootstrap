@@ -10,8 +10,9 @@ spec:
     chart: tetragon
     helm:
       values: |
-        processAncestors:
-          enabled: true
+        tetragon:
+          processAncestors:
+            enabled: true
   destination:
     name: in-cluster
     namespace: kube-system
