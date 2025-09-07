@@ -36,16 +36,6 @@ spec:
             name: portfolio-api
             port:
               number: 80
-  - host: api.aidenharwood.uk
-    http:
-      paths:
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: portfolio-api
-            port:
-              number: 80
       - path: /k9s
         pathType: Prefix
         backend:
