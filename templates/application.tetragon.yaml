@@ -12,7 +12,7 @@ spec:
       values: |
         tetragon:
           processAncestors:
-            enabled: "true"
+            enabled: 'true'
           prometheus:
             enabled: true
   destination:
