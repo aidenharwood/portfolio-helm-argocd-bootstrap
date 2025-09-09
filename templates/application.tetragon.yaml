@@ -11,8 +11,6 @@ spec:
     helm:
       values: |
         tetragon:
-          processAncestors:
-            enabled: 'true'
           prometheus:
             enabled: true
   destination:
