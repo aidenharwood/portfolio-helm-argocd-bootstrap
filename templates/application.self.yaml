@@ -6,6 +6,14 @@ spec:
   project: default
   source:
     helm:
+      values: |
+        metallb:
+          enabled: {{ .Values.metallb.enabled }}
+        local-path-provisioner:
+          enabled: {{ .Values.local-path-provisioner.enabled }}
+        nginx-ingress-controller:
+          enabled: {{ .Values.nginx-ingress-controller.enabled }}
+
       valueFiles:
         - values.yaml
     repoURL: https://github.com/aidenharwood/portfolio-helm-argocd-bootstrap

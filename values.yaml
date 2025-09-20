@@ -12,3 +12,9 @@ argo-cd:
   controller:
     metrics:
       enabled: true
+metallb:
+  enabled: false
+local-path-provisioner:
+  enabled: false
+nginx-ingress-controller:
+  enabled: false

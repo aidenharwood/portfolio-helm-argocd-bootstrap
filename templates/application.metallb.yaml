@@ -1,20 +1,22 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: metallb
-spec:
-  project: default
-  source:
-    helm:
-    repoURL: https://github.com/aidenharwood/portfolio-helm-metallb
-    targetRevision: HEAD
-    path: .
-  destination:
-    name: in-cluster
-    namespace: metallb-system
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+{{ if .Values.metallb.enabled }}
+  apiVersion: argoproj.io/v1alpha1
+  kind: Application
+  metadata:
+    name: metallb
+  spec:
+    project: default
+    source:
+      helm:
+      repoURL: https://github.com/aidenharwood/portfolio-helm-metallb
+      targetRevision: HEAD
+      path: .
+    destination:
+      name: in-cluster
+      namespace: metallb-system
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
+      syncOptions:
+        - CreateNamespace=true
+{{ end }}
