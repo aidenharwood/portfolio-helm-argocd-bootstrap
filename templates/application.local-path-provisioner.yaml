@@ -1,4 +1,4 @@
-{{ if .Values.local-path-provisioner.enabled }}
+{{ if .Values.local_path_provisioner.enabled }}
   apiVersion: argoproj.io/v1alpha1
   kind: Application
   metadata:
