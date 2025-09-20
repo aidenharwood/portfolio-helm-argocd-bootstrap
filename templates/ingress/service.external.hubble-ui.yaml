@@ -1,12 +1,12 @@
-{{ if .Values.cilium.enabled }}
-apiVersion: v1
-kind: Service
-metadata:
-  name: hubble-ui
-spec:
-  type: ExternalName
-  externalName: hubble-ui.kube-system.svc.cluster.local
-  ports:
-  - port: 80
-    targetPort: 80
-{{ end }}
+# {{ if .Values.cilium.enabled }}
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: hubble-ui
+# spec:
+#   type: ExternalName
+#   externalName: hubble-ui.kube-system.svc.cluster.local
+#   ports:
+#   - port: 80
+#     targetPort: 80
+# {{ end }}
