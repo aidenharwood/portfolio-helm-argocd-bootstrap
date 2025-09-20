@@ -1,4 +1,5 @@
 argocd:
+  nameOverride: bootstrap-argocd
   fullnameOverride: bootstrap-argocd
   configs:
     cm:
