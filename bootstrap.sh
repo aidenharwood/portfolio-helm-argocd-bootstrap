@@ -2,7 +2,7 @@ kubectl apply -k https://github.com/argoproj/argo-cd/manifests/crds?ref=stable
 
 ARGOCD_NAMESPACE="argocd" # e.g. argo-cd
 ARGOCD_RELEASENAME="argocd" # e.g. argo-cd
-REPO_DIR ="/tmp/$ARGOCD_RELEASENAME"
+REPO_DIR="/tmp/$ARGOCD_RELEASENAME"
 
 for crd in "applications.argoproj.io" "applicationsets.argoproj.io" "appprojects.argoproj.io"; do
     kubectl label --overwrite crd $crd app.kubernetes.io/managed-by=Helm
