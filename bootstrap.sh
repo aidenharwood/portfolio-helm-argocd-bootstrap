@@ -1,7 +1,7 @@
 kubectl apply -k https://github.com/argoproj/argo-cd/manifests/crds?ref=stable
 
 ARGOCD_NAMESPACE="argocd" # e.g. argo-cd
-ARGOCD_RELEASENAME="bootstrap" # e.g. argo-cd
+ARGOCD_RELEASENAME="bootstrap-argocd" # e.g. argo-cd
 REPO_DIR="/tmp/$ARGOCD_RELEASENAME"
 
 for crd in "applications.argoproj.io" "applicationsets.argoproj.io" "appprojects.argoproj.io"; do
