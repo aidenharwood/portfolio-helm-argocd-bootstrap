@@ -1,4 +1,5 @@
 argocd:
+  fullnameOverride: bootstrap-argocd
   configs:
     cm:
       users.anonymous.enabled: true
