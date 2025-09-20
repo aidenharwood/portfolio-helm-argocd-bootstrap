@@ -1,28 +1,28 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: bootstrap
-spec:
-  project: default
-  source:
-    helm:
-      values: |
-        metallb:
-          enabled: {{ .Values.metallb.enabled }}
-        local_path_provisioner:
-          enabled: {{ .Values.local_path_provisioner.enabled }}
-        nginx_ingress_controller:
-          enabled: {{ .Values.nginx_ingress_controller.enabled }}
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: bootstrap
+# spec:
+#   project: default
+#   source:
+#     helm:
+#       values: |
+#         metallb:
+#           enabled: {{ .Values.metallb.enabled }}
+#         local_path_provisioner:
+#           enabled: {{ .Values.local_path_provisioner.enabled }}
+#         nginx_ingress_controller:
+#           enabled: {{ .Values.nginx_ingress_controller.enabled }}
 
-      valueFiles:
-        - values.yaml
-    repoURL: https://github.com/aidenharwood/portfolio-helm-argocd-bootstrap
-    targetRevision: HEAD
-    path: .
-  destination:
-    name: in-cluster
-    namespace: argocd
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+#       valueFiles:
+#         - values.yaml
+#     repoURL: https://github.com/aidenharwood/portfolio-helm-argocd-bootstrap
+#     targetRevision: HEAD
+#     path: .
+#   destination:
+#     name: in-cluster
+#     namespace: argocd
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
