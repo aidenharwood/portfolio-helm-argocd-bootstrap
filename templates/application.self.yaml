@@ -7,6 +7,7 @@ spec:
   source:
     helm:
       values: |
+        bootstrapped: true
         metallb:
           enabled: {{ .Values.metallb.enabled }}
         local_path_provisioner:
