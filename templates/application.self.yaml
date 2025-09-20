@@ -6,8 +6,6 @@ spec:
   project: default
   source:
     helm:
-      values: |
-        bootstrapped: true
       valueFiles:
         - values.yaml
     repoURL: https://github.com/aidenharwood/portfolio-helm-argocd-bootstrap
