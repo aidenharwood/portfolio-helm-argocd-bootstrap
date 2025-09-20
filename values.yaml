@@ -19,10 +19,10 @@ local_path_provisioner:
 nginx_ingress_controller:
   enabled: false
 cilium:
-  enabled: false
+  enabled: true
 lgtm:
-  enabled: false
+  enabled: true
 minio:
-  enabled: false
+  enabled: true
 tetragon:
   enabled: false
