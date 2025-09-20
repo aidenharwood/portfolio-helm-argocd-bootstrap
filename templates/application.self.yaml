@@ -9,10 +9,10 @@ spec:
       values: |
         metallb:
           enabled: {{ .Values.metallb.enabled }}
-        local-path-provisioner:
-          enabled: {{ .Values.local-path-provisioner.enabled }}
-        nginx-ingress-controller:
-          enabled: {{ .Values.nginx-ingress-controller.enabled }}
+        local_path_provisioner:
+          enabled: {{ .Values.local_path_provisioner.enabled }}
+        nginx_ingress_controller:
+          enabled: {{ .Values.nginx_ingress_controller.enabled }}
 
       valueFiles:
         - values.yaml

@@ -14,7 +14,7 @@ argo-cd:
       enabled: true
 metallb:
   enabled: false
-local-path-provisioner:
+local_path_provisioner:
   enabled: false
-nginx-ingress-controller:
+nginx_ingress_controller:
   enabled: false
