@@ -21,7 +21,7 @@ spec:
           service:
             name: argocd-server
             port:
-              name: http
+              name: https
   # - host: aidenharwood.uk
   #   http:
   #     paths:
