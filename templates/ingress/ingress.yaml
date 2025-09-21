@@ -22,7 +22,7 @@ spec:
           service:
             name: bootstrap-argocd-server
             port:
-              name: https
+              name: http
   # - host: aidenharwood.uk
   #   http:
   #     paths:
