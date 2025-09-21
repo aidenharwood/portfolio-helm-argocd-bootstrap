@@ -21,8 +21,8 @@ nginx_ingress_controller:
 cilium:
   enabled: true
 lgtm:
-  enabled: false
+  enabled: true
 minio:
-  enabled: false
+  enabled: true
 tetragon:
   enabled: false
