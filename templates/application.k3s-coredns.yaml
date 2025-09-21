@@ -1,0 +1,26 @@
+{{ if .Values.k3s_coredns.enabled }}
+  apiVersion: argoproj.io/v1alpha1
+  kind: Application
+  metadata:
+    name: k3s-coredns
+  spec:
+    project: default
+    source:
+      kustomize:
+        patches:
+          - target:
+            kind: Deployment
+            name: coredns
+            namespace: kube-system
+            patch: |-
+            - op: replace
+              path: /spec/replicas
+              value: 2
+    destination:
+      name: in-cluster
+      namespace: kube-system
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
+{{ end }}

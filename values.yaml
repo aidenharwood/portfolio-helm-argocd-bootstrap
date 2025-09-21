@@ -26,3 +26,5 @@ minio:
   enabled: true
 tetragon:
   enabled: false
+k3s_coredns:
+  enabled: true
