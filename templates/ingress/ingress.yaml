@@ -3,11 +3,14 @@ kind: Ingress
 metadata:
   name: argocd-server-ingress
   namespace: argocd
-  annotations:
-    # kubernetes.io/ingress.class: "nginx"
-    # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  # annotations:
+  #   kubernetes.io/ingress.class: "nginx"
+  #   nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: traefik
+  tls:
+  - hosts:
+    - argocd.aidenharwood.uk
   rules:
   - host: argocd.aidenharwood.uk
     http:
@@ -19,47 +22,47 @@ spec:
             name: argocd-server
             port:
               name: http
-  - host: aidenharwood.uk
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: portfolio-frontend
-            port:
-              number: 80
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: portfolio-api
-            port:
-              number: 80
-      - path: /k9s
-        pathType: Prefix
-        backend:
-          service:
-            name: portfolio-api
-            port:
-              number: 80
-  - host: grafana.aidenharwood.uk
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: grafana
-            port:
-              number: 80
-  - host: hubble.aidenharwood.uk
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: hubble-ui
-            port:
-              number: 80
+  # - host: aidenharwood.uk
+  #   http:
+  #     paths:
+  #     - path: /
+  #       pathType: Prefix
+  #       backend:
+  #         service:
+  #           name: portfolio-frontend
+  #           port:
+  #             number: 80
+  #     - path: /api
+  #       pathType: Prefix
+  #       backend:
+  #         service:
+  #           name: portfolio-api
+  #           port:
+  #             number: 80
+  #     - path: /k9s
+  #       pathType: Prefix
+  #       backend:
+  #         service:
+  #           name: portfolio-api
+  #           port:
+  #             number: 80
+  # - host: grafana.aidenharwood.uk
+  #   http:
+  #     paths:
+  #     - path: /
+  #       pathType: Prefix
+  #       backend:
+  #         service:
+  #           name: grafana
+  #           port:
+  #             number: 80
+  # - host: hubble.aidenharwood.uk
+  #   http:
+  #     paths:
+  #     - path: /
+  #       pathType: Prefix
+  #       backend:
+  #         service:
+  #           name: hubble-ui
+  #           port:
+  #             number: 80
