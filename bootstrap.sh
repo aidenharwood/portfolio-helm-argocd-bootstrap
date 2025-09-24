@@ -11,6 +11,6 @@ for crd in "applications.argoproj.io" "applicationsets.argoproj.io" "appprojects
 done
 
 git clone https://github.com/aidenharwood/portfolio-helm-argocd-bootstrap.git $REPO_DIR
-helm upgrade --install --create-namespace --dependency-update --namespace $ARGOCD_NAMESPACE $ARGOCD_RELEASENAME $REPO_DIR
+helm upgrade --install --take-ownership --create-namespace --dependency-update --namespace $ARGOCD_NAMESPACE $ARGOCD_RELEASENAME $REPO_DIR
 
 rm -rf $REPO_DIR
