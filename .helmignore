@@ -1,0 +1,2 @@
+# Host setup scripts are run on the machine, not rendered by Helm/ArgoCD.
+host/

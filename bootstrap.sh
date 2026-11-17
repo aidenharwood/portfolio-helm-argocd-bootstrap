@@ -11,6 +11,10 @@ for crd in "applications.argoproj.io" "applicationsets.argoproj.io" "appprojects
 done
 
 git clone https://github.com/aidenharwood/portfolio-helm-argocd-bootstrap.git $REPO_DIR
+
+# Host fixes: no-op unless this machine has an affected NIC (prompts for sudo if it does)
+bash $REPO_DIR/host/e1000e-no-tso.sh
+
 helm upgrade --install --take-ownership --create-namespace --dependency-update --namespace $ARGOCD_NAMESPACE $ARGOCD_RELEASENAME $REPO_DIR
 
 rm -rf $REPO_DIR

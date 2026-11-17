@@ -30,3 +30,12 @@ This repository contains a Helm chart designed to bootstrap an ArgoCD installati
     repo=$(git config --get remote.origin.url)
     helm install portfolio-bootstrap -n argocd --create-namespace ./ --set repo=$repo
     ```
+
+## Host fixes
+
+`bootstrap.sh` also runs the scripts in `host/` on the machine it runs on. They are excluded from the chart via `.helmignore`.
+
+- `host/e1000e-no-tso.sh`: turns off TSO/GSO on Intel `e1000e` NICs (e.g. the I218-V in homelab1) at every boot via a systemd unit. Without it the NIC hits "Detected Hardware Unit Hang" under load and the wired network stays down until a reboot. Does nothing on machines without an `e1000e` NIC. Run it on its own with:
+    ```bash
+    sudo bash host/e1000e-no-tso.sh
+    ```
